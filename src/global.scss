@@ -32,6 +32,20 @@
  * https://ionicframework.com/docs/theming/dark-mode
  */
 
+
+:root {
+    --theme-white: #fff;
+    --theme-gray-light: #f0f0f0;
+    --theme-gray: #888;
+    --theme-gray-30: #8888884d;
+    --theme-black: #000;
+    --theme-blue: #4871a1;
+    --theme-dark-blue: #274e80;
+    --theme-orange: #ff9500;
+    --header-color: linear-gradient(0deg, rgba(72,113,161,1) 0%, rgba(42,61,88,1) 100%);
+}
+
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import "@ionic/angular/css/palettes/dark.system.css";
+// @import "@ionic/angular/css/palettes/dark.system.css";
+
