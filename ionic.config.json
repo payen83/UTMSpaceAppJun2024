@@ -1,0 +1,7 @@
+{
+  "name": "UTMSpaceApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
