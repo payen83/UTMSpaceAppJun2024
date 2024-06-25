@@ -52,12 +52,12 @@
     <div class="news-container">
       <div class="news-header">
         <ion-label>News</ion-label>
-        <ion-buttons class="show-all">
-          <ion-label>Show all</ion-label>
+        <ion-buttons class="show-all" (click)="showHideNews()">
+          <ion-label>{{ showNews ? 'Hide News' : 'Show News' }}</ion-label>
           <ion-icon name="chevron-forward"></ion-icon>
         </ion-buttons>
       </div> <!-- end of news-header -->
-      <div class="news-slider">
+      <div class="news-slider" *ngIf="showNews">
         <swiper-container [pagination]="true" navigation="true" effect="flip" loop="true">
          
           <swiper-slide class="swiper-slide">

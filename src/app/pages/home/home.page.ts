@@ -10,7 +10,12 @@ register();
 })
 export class HomePage implements OnInit {
   public swiper!: Swiper;
+  public showNews: boolean = false;
   constructor() { }
+
+  showHideNews(){
+    this.showNews = !this.showNews;
+  }
 
   ngOnInit() {
   }
