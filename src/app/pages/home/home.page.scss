@@ -83,4 +83,67 @@ ion-content{
             }
         }
     }
-}
+
+    .news-container{
+        margin-top: -30px;
+        padding: 10px 30px 40px;
+        width: 100%;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        border-color: var(--theme-gray-30);
+        background-color: var(--theme-white);
+        .news-header {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            ion-label {
+                font-size: 15px;
+                font-weight: 500;
+                color: var(--theme-blue);
+            }
+            .show-all {
+                margin-right: -5px;
+                display: flex;
+                ion-label{
+                    margin-right: 5px;
+                    font-size: 15px;
+                    font-weight: 500;
+                    color: var(--theme-dark-blue);
+                }
+                ion-icon{
+                    font-size: 20px;
+                    color: var(--theme-dark-blue);
+                }
+            }
+        } // end of news header
+        .news-slider{
+            .news-image {
+                width: 100%;
+                height: 100%;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center center;
+                }
+            }
+            .news-details {
+                display: flex;
+                flex-direction: column;
+                .title {
+                    margin-top: 0px;
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: var(--theme-black);
+                    //Ellipsis
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                }
+            }
+        }
+    }// end of news container
+
+}// end of ion-content

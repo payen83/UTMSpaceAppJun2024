@@ -21,7 +21,6 @@
     <div class="menu-container">
       <ion-label>Menu</ion-label>
       <div class="menu-wrap">
-
         <div class="menu-button">
           <ion-icon name="earth"></ion-icon>
           <ion-label>What's New</ion-label>
@@ -47,9 +46,53 @@
           <ion-icon name="call"></ion-icon>
           <ion-label>Contact</ion-label>
         </div>
-
       </div>
     </div>
+
+    <div class="news-container">
+      <div class="news-header">
+        <ion-label>News</ion-label>
+        <ion-buttons class="show-all">
+          <ion-label>Show all</ion-label>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </ion-buttons>
+      </div> <!-- end of news-header -->
+      <div class="news-slider">
+        <swiper-container [pagination]="true" navigation="true" effect="flip" loop="true">
+         
+          <swiper-slide class="swiper-slide">
+            <div class="news-image">
+              <img src="assets/images/edu fair banner.jpeg">
+            </div>
+            <div class="news-details">
+              <ion-label class="title">Explore Endless Education Possibilities 2024</ion-label>
+            </div>
+          </swiper-slide>
+
+          <swiper-slide class="swiper-slide">
+            <div class="news-image">
+              <img src="assets/images/utm-jdt.jpeg">
+            </div>
+            <div class="news-details">
+              <ion-label class="title">MOU UTM & JDT</ion-label>
+            </div>
+          </swiper-slide>
+
+          <swiper-slide class="swiper-slide">
+            <div class="news-image">
+              <img src="assets/images/utmspace graduation.jpeg">
+            </div>
+            <div class="news-details">
+              <ion-label class="title">UTMSpace Lahirkan Ramai Graduan Bertaraf Antarabangsa</ion-label>
+            </div>
+          </swiper-slide>
+
+        </swiper-container>
+      </div>
+    </div>
+
+
+
   </div>
 
 </ion-content>

@@ -45,6 +45,13 @@
     --header-color: linear-gradient(0deg, rgba(72,113,161,1) 0%, rgba(42,61,88,1) 100%);
 }
 
+swiper-container::part(wrapper){
+    height: 310px;
+}
+swiper-container::part(bullet-active){
+    background-color: var(--theme-dark-blue);
+}
+
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 // @import "@ionic/angular/css/palettes/dark.system.css";
