@@ -1,0 +1,68 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-title>Add News</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Add News</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="create-news-container">
+    <div class="form-body">
+      <form class="form" method="POST" action="" [formGroup]="newsForm">
+        <div class="form-field d-flex flex-column">
+          
+          <span class="field-label">Title</span>
+          <div class="form-group">
+            <div class="input-group">
+              <input class="form-control" type="text" formControlName="title">
+            </div>
+          </div>
+
+          <span class="field-label">Description</span>
+          <div class="form-group">
+            <div class="input-group">
+              <input class="form-control" type="text" formControlName="description">
+            </div>
+          </div>
+
+          <span class="field-label">Location</span>
+          <div class="form-group">
+            <div class="input-group">
+              <input class="form-control" type="text" formControlName="location">
+            </div>
+          </div>
+
+          <span class="field-label">Date</span>
+          <div class="form-group">
+            <div class="input-group">
+              <input class="form-control" type="date" formControlName="date">
+            </div>
+          </div>
+
+          <span class="field-label">Image URL</span>
+          <div class="form-group">
+            <div class="input-group">
+              <input class="form-control" type="text" formControlName="image_url">
+            </div>
+          </div>
+
+          <div class="button-container">
+            <button class="btn-add" (click)="addNews()">
+              <span class="btn-text">Submit News</span>
+            </button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+
+</ion-content>

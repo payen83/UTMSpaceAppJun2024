@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { APIService } from 'src/app/services/api.service';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,11 @@ import { APIService } from 'src/app/services/api.service';
 })
 export class LoginPage implements OnInit {
   public user: any = { email: 'test1@email.com', password: 'test1234' };
-  constructor(private api: APIService, private router: Router) { }
+  constructor(
+    private api: APIService, 
+    private router: Router,
+    private data: DataService
+  ) { }
 
   ngOnInit() {
   }
@@ -20,6 +25,7 @@ export class LoginPage implements OnInit {
       console.log('login response', response);
       if(response.token){
         //redirect to Home Page
+        this.data.saveData('TOKEN', response.token);
         this.router.navigateByUrl('/home', { replaceUrl: true });
       }
     } catch(error: any){

@@ -1,0 +1,107 @@
+.create-news-container {
+    padding: 15px;
+    width: 100%;
+ 
+    .file-input {
+        // margin: 20px 10px;
+        display: flex;
+ 
+        .file-text {
+        display: none;
+        }
+ 
+        .file-border {
+            margin: 20px auto;
+            width: 100%;
+            border-radius: 8px;
+            border: solid 1px var( --theme-gray );
+            display: flex;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+ 
+            img {
+                width: 100%;
+                border-radius: 6px;
+                object-fit: cover;
+                aspect-ratio: 16/9;
+            }
+        }
+    }
+ 
+    .form-body {
+        .form {
+            padding: 0;
+            width: 100%;
+ 
+            .form-field {
+                width: 100%;
+ 
+                .field-label {
+                    font-size: 13px;
+                    line-height: 1.15;
+                    text-transform: capitalize;
+                    color: var( --theme-black );
+                }
+ 
+                .form-group {
+                    margin-top: 5px;
+ 
+                    .input-group {
+                        display: flex;
+ 
+                        .form-control {
+                            padding: 10px 15px;
+                            width: 100%;
+                            height: 48px;
+                            font-size: 13px;
+                            line-height: 1.15;
+                            border-radius: 6px;
+                            border: solid 1px var( --theme-gray );
+                            color: var( --theme-black );
+                            background-color: var( --theme-white );
+                        }
+ 
+                        .form-control::placeholder {
+                            color: var( --theme-dark-gray );
+                            opacity: 0.7; 
+                        }
+ 
+                        .form-control:focus {
+                            border: solid 1px var( --theme-blue );
+                            box-shadow: none;
+                            outline: none;
+                        }
+                    }
+                }
+ 
+                .field-label:not( :first-child ) {
+                    margin-top: 15px;
+                }
+ 
+                .button-container {
+                    margin-top: 20px;
+                    width: 100%;
+                    height: 50px;
+ 
+                    // Button
+                    .btn-add {
+                        width: 100%;
+                        height: 50px;
+                        border-radius: 10px;
+                        background-color: var( --theme-blue );
+ 
+                        .btn-text {
+                            font-size: 15px;
+                            color: var( --theme-white );
+                            text-transform: uppercase;
+                        }
+                    }
+ 
+                    .btn-add:hover {
+                        background-color: var( --theme-dark-blue );
+                    }
+                } 
+            }
+        }
+    }
+}
