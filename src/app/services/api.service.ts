@@ -11,7 +11,8 @@ export class APIService {
   constructor(
     private httpClient: HttpClient,
     private data: DataService
-  ) { }
+  ) { 
+  }
 
   doGet(endpoint: string){
     return new Promise((resolve, reject) => {

@@ -9,6 +9,10 @@ export class DataService {
   private _storage: Storage;
   private loginSubject = new Subject();
   constructor(private storage: Storage) { 
+<<<<<<< Updated upstream
+=======
+    // this.init();
+>>>>>>> Stashed changes
   }
 
   publishLoginEvent(data: any){
