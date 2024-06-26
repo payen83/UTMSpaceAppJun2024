@@ -21,11 +21,12 @@ export class LoginPage implements OnInit {
 
   async btnLogin(){
     try {
-      let response: any = await this.api.doPost('/login', this.user);
-      console.log('login response', response);
-      if(response.token){
+      // let response: any = await this.api.doPost('/login', this.user);
+      // console.log('login response', response);
+      // if(response.token){
+      if(true){
         this.data.publishLoginEvent(false);
-        this.data.saveData('TOKEN', response.token);
+        // this.data.saveData('TOKEN', response.token);
         
         //redirect to Home Page
         this.router.navigateByUrl('/home', { replaceUrl: true });

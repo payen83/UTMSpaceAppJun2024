@@ -11,7 +11,9 @@ export class AppComponent implements OnInit{
   public isLogin: boolean = true;
   public appPages = [
     { title: 'Home', url: '/home', icon: 'home' },
-    { title: 'News', url: '/news', icon: 'newspaper' }
+    { title: 'News', url: '/news', icon: 'newspaper' },
+    { title: 'Camera', url: '/camera', icon: 'camera' }
+
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
@@ -24,6 +26,7 @@ export class AppComponent implements OnInit{
   }
 
   async init(){
+    await this.data.init();
     this.data.observeLoginEvent().subscribe((data: any) => {
       this.isLogin = data;
     })
@@ -35,7 +38,5 @@ export class AppComponent implements OnInit{
       this.router.navigateByUrl('/home', { replaceUrl: true });
     }
   }
-
-
 
 }

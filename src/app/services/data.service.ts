@@ -9,7 +9,6 @@ export class DataService {
   private _storage: Storage;
   private loginSubject = new Subject();
   constructor(private storage: Storage) { 
-    this.init();
   }
 
   publishLoginEvent(data: any){
@@ -33,6 +32,10 @@ export class DataService {
     const data = await this._storage.get(key);
     console.log(data);
     return await data;
+  }
+
+  async removeData(key: string){
+    return await this._storage.remove(key)
   }
 
 }
