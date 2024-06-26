@@ -1,13 +1,23 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
   private _storage: Storage;
+  private loginSubject = new Subject();
   constructor(private storage: Storage) { 
     this.init();
+  }
+
+  publishLoginEvent(data: any){
+    this.loginSubject.next(data);
+  }
+
+  observeLoginEvent(): Subject<any>{
+    return this.loginSubject;
   }
 
   async init(){
@@ -20,6 +30,9 @@ export class DataService {
   }
 
   async getData(key: string){
-    return await this._storage.get(key);
+    const data = await this._storage.get(key);
+    console.log(data);
+    return await data;
   }
+
 }

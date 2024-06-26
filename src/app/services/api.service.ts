@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { DataService } from './data.service';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,10 @@ import { Injectable } from '@angular/core';
 export class APIService {
   public baseURL: string = 'http://localhost:8888/api';
   // for windows use 'http://localhost/api';
-  constructor(private httpClient: HttpClient) { }
+  constructor(
+    private httpClient: HttpClient,
+    private data: DataService
+  ) { }
 
   doGet(endpoint: string){
     return new Promise((resolve, reject) => {
@@ -19,8 +23,9 @@ export class APIService {
     })
   }//end of doGet
 
-  doPost(endpoint: string, payload: any){
-    let token: any = null;
+  async doPost(endpoint: string, payload: any){
+    let token: any = await this.data.getData('TOKEN');
+    console.log('token ==> ', token);
     let headers_: any = {};
 
     if(token){

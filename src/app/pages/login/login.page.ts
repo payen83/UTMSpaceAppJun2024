@@ -24,8 +24,10 @@ export class LoginPage implements OnInit {
       let response: any = await this.api.doPost('/login', this.user);
       console.log('login response', response);
       if(response.token){
-        //redirect to Home Page
+        this.data.publishLoginEvent(false);
         this.data.saveData('TOKEN', response.token);
+        
+        //redirect to Home Page
         this.router.navigateByUrl('/home', { replaceUrl: true });
       }
     } catch(error: any){

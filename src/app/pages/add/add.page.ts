@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { NavController } from '@ionic/angular';
 import { APIService } from 'src/app/services/api.service';
 
 @Component({
@@ -11,7 +12,8 @@ export class AddPage implements OnInit {
   public newsForm: any = FormGroup;
   constructor(
     private api: APIService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private navCtrl: NavController
   ) { }
 
   ngOnInit() {
@@ -28,7 +30,18 @@ export class AddPage implements OnInit {
     })
   }
 
-  addNews(){
+  async addNews(){
+    let payload: any = this.newsForm.value;
+    console.log(payload);
+
+    try{
+      const response: any = await this.api.doPost('/news', payload);
+      console.log('response ==> ', response);
+      alert('Add News Successful');
+      this.navCtrl.back();
+    } catch(error: any){
+      console.log('Error ==> ', error.message)
+    }
 
   }
 

@@ -1,6 +1,6 @@
 <ion-app>
   <ion-split-pane contentId="main-content">
-    <ion-menu contentId="main-content" type="overlay">
+    <ion-menu [disabled]="isLogin" contentId="main-content" type="overlay">
       <div class="welcome-container">
         <ion-label class="welcome">Good Morning</ion-label>
         <ion-label class="user">Mohd Roslysham</ion-label>
