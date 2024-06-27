@@ -13,7 +13,6 @@ export class AppComponent implements OnInit{
     { title: 'Home', url: '/home', icon: 'home' },
     { title: 'News', url: '/news', icon: 'newspaper' }
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
   constructor(private data: DataService, private router: Router) {
     
@@ -24,6 +23,9 @@ export class AppComponent implements OnInit{
   }
 
   async init(){
+   
+    await this.data.init();
+
     this.data.observeLoginEvent().subscribe((data: any) => {
       this.isLogin = data;
     })
