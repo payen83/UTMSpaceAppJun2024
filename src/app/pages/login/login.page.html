@@ -23,4 +23,15 @@
     <ion-button (click)="btnLogin()">Login</ion-button>
   </div>
 
+  <div class="ion-padding">
+    <ion-title>Camera</ion-title>
+    <img [src]="imagePath || 'assets/shapes.svg'">
+    <div class="ion-padding">
+      <ion-button shape="round" expand="block" fill="outline" (click)="takePhoto()">
+        <ion-icon slot="start" name="camera"></ion-icon>
+        Take Photo
+      </ion-button>
+    </div>
+  </div>
+
 </ion-content>
